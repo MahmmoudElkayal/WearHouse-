@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WearHouse — Product Detail</title>
+  <meta name="description" content="View detailed information about this product from WearHouse." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="product">
+
+  <!-- ── Navbar ── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="home.html" class="nav-brand" aria-label="Go to shop">🛍 WearHouse</a>
+
+      <div class="nav-actions">
+        <!-- User info pill -->
+        <div class="nav-user" id="navUserPill" aria-label="Logged in user">
+          <img
+            id="navUserAvatar"
+            src="https://ui-avatars.com/api/?name=U&background=6D7A91&color=fff"
+            alt="User avatar"
+          />
+          <span id="navUserName">User</span>
+        </div>
+
+        <!-- Theme toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+
+        <!-- Hamburger (opens sidebar) -->
+        <button class="hamburger-btn" id="sidebarOpen" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Sidebar Overlay ── -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- ── Sidebar ── -->
+  <aside class="sidebar" id="sidebar" role="complementary" aria-label="Sidebar menu">
+    <div class="sidebar-header">
+      <span class="sidebar-title">Menu</span>
+      <button class="sidebar-close" id="sidebarClose" aria-label="Close menu">✕</button>
+    </div>
+
+    <div class="sidebar-theme-row">
+      <span class="label">☀︎</span>
+      <label class="theme-switch" id="sidebarThemeSwitch">
+        <input type="checkbox" id="sidebarThemeCheck" />
+        <div class="theme-switch-track"></div>
+        <div class="theme-switch-thumb"></div>
+      </label>
+      <span class="label">🌙</span>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="home.html" class="sidebar-nav-item" id="navHome">
+        <span class="nav-icon">🏠</span> Home
+      </a>
+      <a href="#" class="sidebar-nav-item" id="navAccount">
+        <span class="nav-icon">👤</span> Your Account
+      </a>
+      <div class="sidebar-divider"></div>
+      <a href="#" class="sidebar-nav-item" id="navSettings">
+        <span class="nav-icon">⚙️</span> Help &amp; Settings
+      </a>
+      <a href="#" class="sidebar-nav-item" id="navHelp">
+        <span class="nav-icon">❓</span> Help
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <button class="sidebar-logout-btn" id="sidebarLogoutBtn">Logout</button>
+    </div>
+  </aside>
+
+  <!-- ── Product Detail Container ── -->
+  <main>
+    <div class="product-detail-wrapper" id="productDetailContainer" aria-live="polite">
+      <!-- Populated by JS (UI.renderProductDetail) -->
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/cookieManager.js"></script>
+  <script src="js/userModel.js"></script>
+  <script src="js/productModel.js"></script>
+  <script src="js/authService.js"></script>
+  <script src="js/uiController.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

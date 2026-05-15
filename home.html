@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WearHouse — Shop</title>
+  <meta name="description" content="Browse our full catalogue of premium products at WearHouse." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="home">
+
+  <!-- ── Navbar ── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <span class="nav-brand">🛍 WearHouse</span>
+
+      <div class="nav-actions">
+        <!-- User info pill -->
+        <div class="nav-user" id="navUserPill" aria-label="Logged in user">
+          <img
+            id="navUserAvatar"
+            src="https://ui-avatars.com/api/?name=U&background=6D7A91&color=fff"
+            alt="User avatar"
+          />
+          <span id="navUserName">User</span>
+        </div>
+
+        <!-- Theme toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+
+        <!-- Hamburger (opens sidebar) -->
+        <button class="hamburger-btn" id="sidebarOpen" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Sidebar Overlay ── -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- ── Sidebar ── -->
+  <aside class="sidebar" id="sidebar" role="complementary" aria-label="Sidebar menu">
+    <div class="sidebar-header">
+      <span class="sidebar-title">Menu</span>
+      <button class="sidebar-close" id="sidebarClose" aria-label="Close menu">✕</button>
+    </div>
+
+    <div class="sidebar-theme-row">
+      <span class="label">☀︎</span>
+      <label class="theme-switch" id="sidebarThemeSwitch">
+        <input type="checkbox" id="sidebarThemeCheck" />
+        <div class="theme-switch-track"></div>
+        <div class="theme-switch-thumb"></div>
+      </label>
+      <span class="label">🌙</span>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="home.html" class="sidebar-nav-item active" id="navHome">
+        <span class="nav-icon">🏠</span> Home
+      </a>
+      <a href="#" class="sidebar-nav-item" id="navAccount">
+        <span class="nav-icon">👤</span> Your Account
+      </a>
+      <div class="sidebar-divider"></div>
+      <a href="#" class="sidebar-nav-item" id="navSettings">
+        <span class="nav-icon">⚙️</span> Help &amp; Settings
+      </a>
+      <a href="#" class="sidebar-nav-item" id="navHelp">
+        <span class="nav-icon">❓</span> Help
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <button class="sidebar-logout-btn" id="sidebarLogoutBtn">Logout</button>
+    </div>
+  </aside>
+
+  <!-- ── Page Header ── -->
+  <main class="container">
+    <header class="page-header">
+      <h1>Our Products</h1>
+      <p>Discover our curated collection of premium items.</p>
+    </header>
+
+    <!-- ── Filter Bar ── -->
+    <div class="filter-bar" role="search">
+      <div class="search-input-wrapper">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Search products…"
+          aria-label="Search products"
+        />
+      </div>
+
+      <select id="categoryFilter" aria-label="Filter by category">
+        <option value="">All Categories</option>
+      </select>
+
+      <span id="productCount" style="color:var(--text-muted);font-size:.875rem;white-space:nowrap;"></span>
+    </div>
+
+    <!-- ── Products Grid ── -->
+    <section
+      id="productsGrid"
+      class="products-grid"
+      aria-label="Products"
+      aria-live="polite"
+    >
+      <!-- Populated by JS -->
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/cookieManager.js"></script>
+  <script src="js/userModel.js"></script>
+  <script src="js/productModel.js"></script>
+  <script src="js/authService.js"></script>
+  <script src="js/uiController.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

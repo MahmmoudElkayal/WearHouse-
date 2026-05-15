@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WearHouse — Create Account</title>
+  <meta name="description" content="Create your WearHouse account and start browsing our premium product catalogue." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="signup">
+
+  <div class="auth-wrapper">
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle auth-theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+
+    <div class="auth-card" style="max-width:520px">
+
+      <!-- Logo -->
+      <div class="auth-logo">🛍 WearHouse</div>
+      <p class="auth-subtitle">Create your account to get started.</p>
+
+      <!-- Signup Form -->
+      <form id="signupForm" novalidate>
+
+        <!-- Avatar preview -->
+        <div style="display:flex;justify-content:center;margin-bottom:18px;">
+          <img
+            id="avatarPreview"
+            src="https://ui-avatars.com/api/?name=User&background=6D7A91&color=fff&bold=true&size=80"
+            alt="Avatar preview"
+            style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);box-shadow:var(--shadow-md);"
+          />
+        </div>
+
+        <!-- Full Name -->
+        <div class="form-group">
+          <label class="form-label" for="signupName">Full name</label>
+          <input
+            class="form-input"
+            type="text"
+            id="signupName"
+            name="name"
+            placeholder="John Doe"
+            autocomplete="name"
+            required
+          />
+          <span class="form-error" id="signupNameError" role="alert"></span>
+          <p class="form-hint">Letters and spaces only, 2–50 characters.</p>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label class="form-label" for="signupEmail">Email address</label>
+          <input
+            class="form-input"
+            type="email"
+            id="signupEmail"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          />
+          <span class="form-error" id="signupEmailError" role="alert"></span>
+          <p class="form-hint">Must be a valid email address (e.g. user@domain.com).</p>
+        </div>
+
+        <!-- Avatar URL (optional) -->
+        <div class="form-group">
+          <label class="form-label" for="signupAvatar">Avatar URL <span style="font-weight:400;color:var(--text-muted)">(optional)</span></label>
+          <input
+            class="form-input"
+            type="url"
+            id="signupAvatar"
+            name="avatar"
+            placeholder="https://example.com/photo.jpg"
+          />
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label class="form-label" for="signupPassword">Password</label>
+          <div class="input-wrapper">
+            <input
+              class="form-input"
+              type="password"
+              id="signupPassword"
+              name="password"
+              placeholder="Min. 8 chars, A-z, 0-9, !@#…"
+              autocomplete="new-password"
+              required
+            />
+            <span class="input-icon" id="toggleSignupPass" role="button" tabindex="0" aria-label="Toggle password">👁</span>
+          </div>
+          <div class="password-strength">
+            <div class="strength-bar"></div>
+            <div class="strength-bar"></div>
+            <div class="strength-bar"></div>
+            <div class="strength-bar"></div>
+          </div>
+          <span class="form-error" id="signupPassError" role="alert"></span>
+          <p class="form-hint">At least 8 characters with uppercase, lowercase, number & special character.</p>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form-group">
+          <label class="form-label" for="signupConfirm">Confirm password</label>
+          <div class="input-wrapper">
+            <input
+              class="form-input"
+              type="password"
+              id="signupConfirm"
+              name="confirm"
+              placeholder="Re-enter password"
+              autocomplete="new-password"
+              required
+            />
+            <span class="input-icon" id="toggleSignupConf" role="button" tabindex="0" aria-label="Toggle confirm password">👁</span>
+          </div>
+          <span class="form-error" id="signupConfError" role="alert"></span>
+        </div>
+
+        <!-- Submit -->
+        <button class="btn btn-primary btn-full" type="submit" id="signupSubmit">
+          Create Account
+        </button>
+
+      </form>
+
+      <!-- Divider -->
+      <div class="form-divider">or</div>
+
+      <!-- Back to login -->
+      <p class="auth-footer">
+        Already have an account?
+        <a href="index.html">Sign in →</a>
+      </p>
+
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/cookieManager.js"></script>
+  <script src="js/userModel.js"></script>
+  <script src="js/productModel.js"></script>
+  <script src="js/authService.js"></script>
+  <script src="js/uiController.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

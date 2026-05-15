@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WearHouse — Sign In</title>
+  <meta name="description" content="Sign in to WearHouse to browse and explore our premium product catalogue." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="login">
+
+  <div class="auth-wrapper">
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle auth-theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+
+    <div class="auth-card">
+      <!-- Logo -->
+      <div class="auth-logo">🛍 WearHouse</div>
+      <p class="auth-subtitle">Welcome back! Sign in to continue.</p>
+
+      <!-- Login Form -->
+      <form id="loginForm" novalidate>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label class="form-label" for="loginEmail">Email address</label>
+          <input
+            class="form-input"
+            type="email"
+            id="loginEmail"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          />
+          <span class="form-error" id="loginEmailError" role="alert"></span>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label class="form-label" for="loginPassword">Password</label>
+          <div class="input-wrapper">
+            <input
+              class="form-input"
+              type="password"
+              id="loginPassword"
+              name="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+            />
+            <span class="input-icon" id="togglePassword" role="button" tabindex="0" aria-label="Toggle password visibility">👁</span>
+          </div>
+          <span class="form-error" id="loginPassError" role="alert"></span>
+          <a href="#" id="forgotPasswordLink" style="display:block;text-align:right;font-size:.8rem;margin-top:6px;color:var(--text-secondary);font-weight:500;">Forgot password?</a>
+        </div>
+
+        <!-- Submit -->
+        <button class="btn btn-primary btn-full" type="submit" id="loginSubmit">
+          Sign In
+        </button>
+
+      </form>
+
+      <!-- Divider -->
+      <div class="form-divider">or</div>
+
+      <!-- Signup link -->
+      <p class="auth-footer">
+        Don't have an account?
+        <a href="signup.html" id="signupLink">Create account →</a>
+      </p>
+    </div>
+
+    <!-- ── Forgot Password Modal ── -->
+    <div id="forgotModal" class="forgot-modal-overlay hidden">
+      <div class="auth-card" style="max-width:420px; animation: slideUp .3s ease;">
+        <div class="auth-logo">🔑 Reset Password</div>
+        <p class="auth-subtitle">Enter your email and we'll send you a reset link.</p>
+
+        <form id="forgotForm" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="forgotEmail">Email address</label>
+            <input
+              class="form-input"
+              type="email"
+              id="forgotEmail"
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
+            <span class="form-error" id="forgotEmailError" role="alert"></span>
+          </div>
+
+          <button class="btn btn-primary btn-full" type="submit" id="forgotSubmit">
+            Send Reset Link
+          </button>
+        </form>
+
+        <p class="auth-footer" style="margin-top:18px;">
+          <a href="#" id="forgotBackLink">← Back to Sign In</a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scripts — order matters (dependencies first) -->
+  <script src="js/cookieManager.js"></script>
+  <script src="js/userModel.js"></script>
+  <script src="js/productModel.js"></script>
+  <script src="js/authService.js"></script>
+  <script src="js/uiController.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
