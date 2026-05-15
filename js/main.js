@@ -375,7 +375,7 @@ async function initHomePage() {
     const cat   = catSel?.value || '';
 
     const filtered = allProducts.filter(p => {
-      const matchSearch = !query || p.name.toLowerCase().includes(query) || p.description.toLowerCase().includes(query);
+      const matchSearch = !query || p.name.toLowerCase().includes(query) || (p.description || '').toLowerCase().includes(query);
       const matchCat    = !cat || p.category === cat;
       return matchSearch && matchCat;
     });
